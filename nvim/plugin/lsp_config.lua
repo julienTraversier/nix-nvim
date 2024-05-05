@@ -96,7 +96,7 @@ require('lspconfig')[server_name].setup(({
   cmd = (servers[server_name] or {}).cmd,
 }))
 end
-
+--
 --require('lspconfig').clangd.setup({
 --  capabilities = capabilities,
 --  cmd = require("clangd_config").cmd,
