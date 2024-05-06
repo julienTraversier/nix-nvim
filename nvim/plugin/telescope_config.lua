@@ -1,11 +1,12 @@
 
 -- [[ Configure Telescope ]]
 -- See `:help telescope` and `:help telescope.setup()`
-local status,fzf = pcall(require('telescope').load_extension, 'fzf')
-
-if not status then
-  return
-end
+--local status,fzf = pcall(require('telescope').load_extension, 'fzf')
+--
+--if not status then
+--    print("error load telescope")
+--  return
+--end
 
 require('telescope').setup {
   defaults = {
