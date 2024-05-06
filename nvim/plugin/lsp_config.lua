@@ -99,25 +99,25 @@ end
 --
 --require('lspconfig').clangd.setup({
 --  capabilities = capabilities,
---  cmd = require("clangd_config").cmd,
---  on_attach = require("clangd_config").on_attach,
---  filetypes = require("clangd_config").filetypes
+--  cmd = require("user.clangd_config").cmd,
+--  on_attach = require("user.clangd_config").on_attach,
+--  filetypes = require("user.clangd_config").filetypes
 --})
---require("lspsaga").setup({
---  finder = {
---    keys = {
---      shuttle = '<Tab>',
---      toggle_or_open = 'e',
---    }
---  },
---  callhierarchy = {
---    keys = {
---      shuttle = '<Tab>',
---    }
---  },
---  outline = {
---    layout = "float"
---  }
---})
-----setup rustacean
---require("rustacean_config")
+require("lspsaga").setup({
+  finder = {
+    keys = {
+      shuttle = '<Tab>',
+      toggle_or_open = 'e',
+    }
+  },
+  callhierarchy = {
+    keys = {
+      shuttle = '<Tab>',
+    }
+  },
+  outline = {
+    layout = "float"
+  }
+})
+--setup rustacean
+require("user.rustacean_config")

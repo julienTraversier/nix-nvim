@@ -28,6 +28,7 @@ with final.pkgs.lib; let
   all-plugins = with pkgs.vimPlugins; [
     # plugins from nixpkgs go in here.
     # https://search.nixos.org/packages?channel=unstable&from=0&size=50&sort=relevance&type=packages&query=vimPlugins
+    barbar-nvim
     catppuccin-nvim	
     nvim-lspconfig
     nvim-treesitter.withAllGrammars
@@ -53,6 +54,7 @@ with final.pkgs.lib; let
     neogit # https://github.com/TimUntersberger/neogit/
     gitsigns-nvim # https://github.com/lewis6991/gitsigns.nvim/
     vim-fugitive # https://github.com/tpope/vim-fugitive/
+    nvim-cursorline
 git-messenger-vim
 auto-pairs
 nvim-navic
@@ -68,7 +70,7 @@ lsp-inlayhints-nvim
 nvim-spectre
 trouble-nvim
 todo-comments-nvim
-codeium-vim
+codeium-nvim
 chadtree
     # ^ git integration plugins
     # telescope and extensions
@@ -94,7 +96,7 @@ chadtree
     # libraries that other plugins depend on
     plenary-nvim
     nvim-web-devicons
-    vim-repeat
+    toggleterm-nvim
     # ^ libraries that other plugins depend on
     # bleeding-edge plugins from flake inputs
     # (mkNvimPlugin inputs.wf-nvim "wf.nvim") # (example) keymap hints | https://github.com/Cassin01/wf.nvim
@@ -108,11 +110,13 @@ chadtree
     tree-sitter
     lua-language-server
     nil # nix LSP
+    nixd
   ];
 in {
   # This is the neovim derivation
   # returned by the overlay
   nvim-pkg = mkNeovim {
+    
     plugins = all-plugins;
     inherit extraPackages;
     extraLuaPackages = p: [ p.jsregexp ];
