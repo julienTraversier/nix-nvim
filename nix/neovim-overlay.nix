@@ -37,7 +37,7 @@ with final.pkgs.lib; let
     nvim-cmp # https://github.com/hrsh7th/nvim-cmp
     cmp_luasnip # snippets autocompletion extension for nvim-cmp | https://github.com/saadparwaiz1/cmp_luasnip/
     lspkind-nvim # vscode-like LSP pictograms | https://github.com/onsails/lspkind.nvim/
-    indent-blankline-nvim
+#indent-blankline-nvim
     comment-nvim
     telescope-live-grep-args-nvim
     lazygit-nvim
@@ -88,10 +88,8 @@ chadtree
     # navigation/editing enhancement plugins
     nvim-surround # https://github.com/kylechui/nvim-surround/
     nvim-treesitter-textobjects # https://github.com/nvim-treesitter/nvim-treesitter-textobjects/
-    nvim-ts-context-commentstring # https://github.com/joosepalviste/nvim-ts-context-commentstring/
     # ^ navigation/editing enhancement plugins
     # Useful utilities
-    nvim-unception # Prevent nested neovim sessions | nvim-unception
     # ^ Useful utilities
     # libraries that other plugins depend on
     plenary-nvim

@@ -97,12 +97,12 @@ for server_name, opts in pairs(servers) do
     }))
 end
 --
---require('lspconfig').clangd.setup({
---  capabilities = capabilities,
---  cmd = require("user.clangd_config").cmd,
---  on_attach = require("user.clangd_config").on_attach,
---  filetypes = require("user.clangd_config").filetypes
---})
+require('lspconfig').clangd.setup({
+  capabilities = capabilities,
+  cmd = require("user.clangd_config").cmd,
+  on_attach = require("user.clangd_config").on_attach,
+  filetypes = require("user.clangd_config").filetypes
+})
 require("lspsaga").setup({
   finder = {
     keys = {
@@ -120,4 +120,4 @@ require("lspsaga").setup({
   }
 })
 --setup rustacean
-require("user.rustacean_config")
+-- require("user.rustacean_config")
