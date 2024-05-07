@@ -103,28 +103,28 @@ bufferline.setup {
 local map = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
 
-map('n', '<A-left>', '<Cmd>BufferLineCyclePrev<CR>', opts)
-map('n', '<A-right>', '<Cmd>BufferLineCycleNext<CR>', opts)
-map('n', '<A-h>', '<Cmd>BufferLineCyclePrev<CR>', opts)
-map('n', '<A-l>', '<Cmd>BufferLineCycleNext<CR>', opts)
+map('n', '<A-left>', '<Cmd>BufferPrevious<CR>', opts)
+map('n', '<A-right>', '<Cmd>BufferNext<CR>', opts)
+map('n', '<A-h>', '<Cmd>BufferPrevious<CR>', opts)
+map('n', '<A-l>', '<Cmd>BufferNext<CR>', opts)
 -- Re-order to previous/next
-map('n', '<A-<>', '<Cmd>BufferLineMovePrev<CR>', opts)
-map('n', '<A->>', '<Cmd>BufferLineMoveNext<CR>', opts)
+map('n', '<A-<>', '<Cmd>BufferMovePrev<CR>', opts)
+map('n', '<A->>', '<Cmd>BufferMoveNext<CR>', opts)
 -- Goto buffer in position...
-map('n', '<A-&>', '<Cmd>BufferLineGoToBuffer 1<CR>', opts)
-map('n', '<A-é>', '<Cmd>BufferLineGoToBuffer 2<CR>', opts)
-map('n', '<A-">', '<Cmd>BufferLineGoToBuffer 3<CR>', opts)
-map('n', "<A-'>", '<Cmd>BufferLineGoToBuffer 4<CR>', opts)
-map('n', "<A-(>", '<Cmd>BufferLineGoToBuffer 5<CR>', opts)
-map('n', "<A-->", '<Cmd>BufferLineGoToBuffer 6<CR>', opts)
-map('n', '<A-è>', '<Cmd>BufferLineGoToBuffer 7<CR>', opts)
-map('n', '<A-_>', '<Cmd>BufferLineGoToBuffer 8<CR>', opts)
-map('n', '<A-ç>', '<Cmd>BufferLineGoToBuffer 9<CR>', opts)
+map('n', '<A-&>', '<Cmd>BufferGoTo 1<CR>', opts)
+map('n', '<A-é>', '<Cmd>BufferGoTo 2<CR>', opts)
+map('n', '<A-">', '<Cmd>BufferGoTo 3<CR>', opts)
+map('n', "<A-'>", '<Cmd>BufferGoTo 4<CR>', opts)
+map('n', "<A-(>", '<Cmd>BufferGoTo 5<CR>', opts)
+map('n', "<A-->", '<Cmd>BufferGoTo 6<CR>', opts)
+map('n', '<A-è>', '<Cmd>BufferGoTo 7<CR>', opts)
+map('n', '<A-_>', '<Cmd>BufferGoTo 8<CR>', opts)
+map('n', '<A-ç>', '<Cmd>BufferGoTo 9<CR>', opts)
 --map('n', '<A-à>', '<Cmd>BufferLast<CR>', opts)
 -- Pin/unpin buffer
-map('n', '<A-p>', '<Cmd>BufferLineTogglePin<CR>', opts)
+map('n', '<A-p>', '<Cmd>BufferPin<CR>', opts)
 -- Close buffer
-map('n', '<A-c>', '<Cmd>bdelete<CR>', opts)
+map('n', '<A-c>', '<Cmd>BufferDelete<CR>', opts)
 -- Wipeout buffer
 --                 :BufferWipeout
 -- Close commands
@@ -134,6 +134,6 @@ map('n', '<A-c>', '<Cmd>bdelete<CR>', opts)
 --                 :BufferCloseBuffersLeft
 --                 :BufferCloseBuffersRight
 -- Magic buffer-picking mode
-map('n', '<C-p>', '<Cmd>BufferLinePick<CR>', opts)
+map('n', '<C-p>', '<Cmd>BufferPick<CR>', opts)
 -- Sort automatically by...
-map('n', '<Space>cc', '<Cmd>BufferLineCloseOthers<CR>', opts)
+map('n', '<Space>cc', '<Cmd>BufferCloseAllButCurrent<CR>', opts)

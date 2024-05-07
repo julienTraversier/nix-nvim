@@ -1,14 +1,10 @@
-local status_ok, barbar = pcall(require, "barbar")
-if not status_ok then
-  return
-end
 
 vim.g.barbar_auto_setup = false
 local map = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
 
 
-barbar.setup {
+require("barbar").setup {
   -- lazy.nvim will automatically call setup for you. put your options here, anything missing will use the default:
   animation = true,
   clickable = true,

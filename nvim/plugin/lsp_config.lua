@@ -64,7 +64,7 @@ end
 --  define the property 'filetypes' to the map in question.
 local servers = {
     clangd = {
-        --opts = require("clangd_config"),
+         opts = require("user.clangd_config"),
     },
     nixd = {},
     -- gopls = {},
@@ -120,4 +120,4 @@ require("lspsaga").setup({
   }
 })
 --setup rustacean
--- require("user.rustacean_config")
+require("user.rustacean_config")
