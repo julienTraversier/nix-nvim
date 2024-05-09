@@ -55,23 +55,23 @@ with final.pkgs.lib; let
     gitsigns-nvim # https://github.com/lewis6991/gitsigns.nvim/
     vim-fugitive # https://github.com/tpope/vim-fugitive/
     nvim-cursorline
-git-messenger-vim
-auto-pairs
-nvim-navic
-barbecue-nvim
-nvim-lint
-nvim-surround
-noice-nvim
-nui-nvim
-nvim-notify
-rustaceanvim
-mini-nvim
-lsp-inlayhints-nvim
-nvim-spectre
-trouble-nvim
-todo-comments-nvim
-codeium-nvim
-chadtree
+    git-messenger-vim
+    auto-pairs
+    nvim-navic
+    barbecue-nvim
+    nvim-lint
+    nvim-surround
+    noice-nvim
+    nui-nvim
+    nvim-notify
+    rustaceanvim
+    mini-nvim
+    lsp-inlayhints-nvim
+    nvim-spectre
+    trouble-nvim
+    todo-comments-nvim
+    codeium-nvim
+    chadtree
     # ^ git integration plugins
     # telescope and extensions
     telescope-nvim # https://github.com/nvim-telescope/telescope.nvim/
@@ -93,8 +93,13 @@ chadtree
     # ^ Useful utilities
     # libraries that other plugins depend on
     plenary-nvim
+    neodev-nvim
     nvim-web-devicons
     toggleterm-nvim
+    nvim-dap-ui
+    nvim-dap-python
+    nvim-dap
+
     # ^ libraries that other plugins depend on
     # bleeding-edge plugins from flake inputs
     # (mkNvimPlugin inputs.wf-nvim "wf.nvim") # (example) keymap hints | https://github.com/Cassin01/wf.nvim
@@ -110,6 +115,8 @@ chadtree
     lua-language-server
     nil # nix LSP
     nixd
+    clang
+    pyright
   ];
 in {
   # This is the neovim derivation

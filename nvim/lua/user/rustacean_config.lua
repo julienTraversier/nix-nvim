@@ -15,16 +15,16 @@ local on_attach = function(client,bufnr)
 end
 
 
-local extension_path = vim.env.HOME .. '/.vscode/extensions/vadimcn.vscode-lldb-1.10.0/'
-local codelldb_path = extension_path .. 'adapter/codelldb'
-local liblldb_path = extension_path .. 'lldb/lib/liblldb.so'
-local cfg = require('rustaceanvim.config')
-vim.g.rustaceanvim = {
-  server = {
-    on_attach = on_attach
-  },
-  dap = {
-      adapter = cfg.get_codelldb_adapter(codelldb_path, liblldb_path),
-  }
-}
+-- local extension_path = vim.env.HOME .. '/.vscode/extensions/vadimcn.vscode-lldb-1.10.0/'
+-- local codelldb_path = extension_path .. 'adapter/codelldb'
+-- local liblldb_path = extension_path .. 'lldb/lib/liblldb.so'
+-- local cfg = require('rustaceanvim.config')
+ vim.g.rustaceanvim = {
+   server = {
+     on_attach = on_attach
+   },
+   dap = {
+       --adapter = cfg.get_codelldb_adapter(codelldb_path, liblldb_path),
+   }
+ }
 

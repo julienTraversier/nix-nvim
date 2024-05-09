@@ -47,12 +47,12 @@ local on_attach = function(_, bufnr)
     vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
         vim.lsp.buf.format()
     end, { desc = 'Format current buffer with LSP' })
-    --require("lsp-inlayhints").on_attach(_, bufnr)
+    require("lsp-inlayhints").on_attach(_, bufnr)
 end
 
 -- mason-lspconfig requires that these setup functions are called in this order
 -- before setting up the servers.
---require("lsp-inlayhints").setup()
+require("lsp-inlayhints").setup()
 
 -- Enable the following language servers
 --  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
@@ -69,6 +69,7 @@ local servers = {
     nixd = {},
     -- gopls = {},
     pyright = {},
+    rustacean = {},
     -- tsserver = {},
     -- html = { filetypes = { 'html', 'twig', 'hbs'} },
 
