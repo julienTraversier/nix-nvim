@@ -69,7 +69,6 @@ local servers = {
     nixd = {},
     -- gopls = {},
     pyright = {},
-    rustacean = {},
     -- tsserver = {},
     -- html = { filetypes = { 'html', 'twig', 'hbs'} },
 

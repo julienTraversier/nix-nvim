@@ -12,6 +12,10 @@
     #   url = "github:Cassin01/wf.nvim";
     #   flake = false;
     # };
+    venv-selector = {
+        url = "github:linux-cultist/venv-selector.nvim";
+        flake = false;
+    };
   };
 
   outputs = inputs @ {

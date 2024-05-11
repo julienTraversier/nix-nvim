@@ -102,13 +102,13 @@ with final.pkgs.lib; let
 
     # ^ libraries that other plugins depend on
     # bleeding-edge plugins from flake inputs
-    # (mkNvimPlugin inputs.wf-nvim "wf.nvim") # (example) keymap hints | https://github.com/Cassin01/wf.nvim
-    #(mkNvimPlugin inputs.venv-selector "venv-selector.nvim")
+     (mkNvimPlugin inputs.venv-selector "venv-selector.nvim") # (example) keymap hints | https://github.com/Cassin01/wf.nvim
+#(mkNvimPlugin  "wf.nvim") # (example) keymap hints | https://github.com/Cassin01/wf.nvim
+
     # ^ bleeding-edge plugins from flake inputs
     which-key-nvim
   ];
 
-  extraLuaPackages = p: [ p.jsregexp ];
   extraPackages = with pkgs; [
     # language servers, etc.
     tree-sitter
