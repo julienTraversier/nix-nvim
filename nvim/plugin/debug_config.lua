@@ -57,35 +57,46 @@ checkDebugPyInstallation()
  }
 
 
- dap.adapters.cppdbg = {
-   id = 'cppdbg',
-   type = 'executable',
-   command = '/home/jtraversier/Téléchargements/extension/debugAdapters/bin/OpenDebugAD7',
+ --dap.adapters.cppdbg = {
+ --  id = 'cppdbg',
+ --  type = 'executable',
+ --  command = '/home/jtraversier/Téléchargements/extension/debugAdapters/bin/OpenDebugAD7',
+ --}
+ dap.adapters.gdb = {
+     type = 'executable',
+     command = "gdb",
+     args = {"-i", "dap"}
  }
  dap.configurations.c = {
    {
      name = "Launch file",
-     type = "cppdbg",
+     type = "gdb",
      request = "launch",
      --program = function()
      --  return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
      --end,
-     program = "${workspaceFolder}/../build_x86/fiber-optic/Fiber_Optic",
+     -- program = "${workspaceFolder}/../build_x86/fiber-optic/Fiber_Optic",
+    program = function()
+      return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
+    end,
      cwd = '${workspaceFolder}',
-     stopAtEntry = false,
+     stopAtBeginningOfMainSubprogram = false,
    }
  }
  dap.configurations.cpp = {
    {
      name = "Launch file",
-     type = "cppdbg",
+     type = "gdb",
      request = "launch",
      --program = function()
      --  return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
      --end,
-     program = "${workspaceFolder}/../build_x86/fiber-optic/Fiber_Optic",
+     -- program = "${workspaceFolder}/../build_x86/fiber-optic/Fiber_Optic",
+    function()
+      return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
+    end,
      cwd = '${workspaceFolder}',
-     stopAtEntry = false,
+     stopAtBeginningOfMainSubprogram = false,
    }
  }
  --dap.configurations.rust = {
