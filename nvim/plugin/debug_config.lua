@@ -13,6 +13,9 @@
  vim.keymap.set("n", "<leader>df", dapui.float_element, { desc = "Debug: pop up floating element" })
  vim.keymap.set("n", "<leader>dt", dapui.toggle, { desc = "Debug: pop up floating element" })
 
+ function checkDebugPyInstallation()
+    os.execute("pythonCheckDap")
+ end
  -- Dap UI setup
  -- For more information, see |:help nvim-dap-ui|
  dapui.setup {
@@ -41,7 +44,7 @@
  dap.listeners.after.event_initialized['dapui_config'] = dapui.open
  dap.listeners.before.event_terminated['dapui_config'] = dapui.close
  dap.listeners.before.event_exited['dapui_config'] = dapui.close
-
+checkDebugPyInstallation()
  require('dap-python').setup("~/.virtualenvs/debugpy/bin/python")
  dap.configurations.python = {
    {

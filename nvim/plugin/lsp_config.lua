@@ -66,6 +66,7 @@ local servers = {
     clangd = {
          opts = require("user.clangd_config"),
     },
+    bashls = {};
     nixd = {},
     -- gopls = {},
     pyright = {},

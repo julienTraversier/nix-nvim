@@ -117,6 +117,7 @@ with final.pkgs.lib; let
     nixd
     clang
     pyright
+    nodePackages.bash-language-server
   ];
 in {
   # This is the neovim derivation
